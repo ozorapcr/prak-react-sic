@@ -1,18 +1,17 @@
-import Sidebar from "./layouts/Sidebar";
+import Sidebar from "./layouts/Sidebar"; 
 import Header from "./layouts/Header";
 import Dashboard from "./pages/Dashboard";
 
-export default function App() {
+function App() {
   return (
-    <div className="bg-gray-100 min-h-screen flex">
-
+    <div className="flex bg-[#F3F4FF] min-h-screen">
       <Sidebar />
-
-      <div className="flex-1 p-4">
+      <div className="flex-1 flex flex-col">
         <Header />
         <Dashboard />
       </div>
-
     </div>
   );
 }
+
+export default App;
