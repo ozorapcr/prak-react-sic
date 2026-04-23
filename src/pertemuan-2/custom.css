@@ -1,0 +1,369 @@
+/* Styling untuk keseluruhan halaman */
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background: linear-gradient(145deg, #ffd1e6 0%, #ffc0cb 30%, #ffe4f0 70%, #ffe0f0 100%);
+    color: #4a3f4a;
+    margin: 0;
+    padding: 15px;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "⚡";
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 100px;
+    opacity: 0.1;
+    transform: rotate(15deg);
+    color: #ff69b4;
+    text-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    animation: floatFF 6s ease-in-out infinite;
+    z-index: 0;
+}
+
+body::after {
+    content: "🔥";
+    position: fixed;
+    bottom: 20px;
+    left: 30px;
+    font-size: 120px;
+    opacity: 0.1;
+    transform: rotate(-10deg);
+    color: #ffa07a;
+    text-shadow: 0 0 30px rgba(255, 160, 122, 0.6);
+    animation: floatFF 7s ease-in-out infinite reverse;
+    z-index: 0;
+}
+
+@keyframes floatFF {
+    0%, 100% { transform: rotate(15deg) translateY(0); }
+    50% { transform: rotate(20deg) translateY(-20px); }
+}
+
+/* Container utama untuk Hello World */
+div:has(> h1:first-child) {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header Hello World */
+h1 {
+    font-family: 'Montserrat', 'Poppins', sans-serif;
+    font-size: 4em;
+    font-weight: 800;
+    text-align: center;
+    margin: 20px 0 5px;
+    background: linear-gradient(135deg, #ff69b4, #ffb6c1, #ffa07a, #ffb3c6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+    letter-spacing: 3px;
+    position: relative;
+    animation: glowText 3s ease-in-out infinite;
+}
+
+h1::before {
+    content: "🔥";
+    font-size: 60px;
+    position: absolute;
+    left: 15%;
+    top: -20px;
+    opacity: 0.7;
+    animation: fireDance 2s ease-in-out infinite;
+}
+
+h1::after {
+    content: "⚡";
+    font-size: 60px;
+    position: absolute;
+    right: 15%;
+    top: -20px;
+    opacity: 0.7;
+    animation: fireDance 2s ease-in-out infinite 0.5s;
+}
+
+@keyframes fireDance {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(10deg); }
+}
+
+@keyframes glowText {
+    0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.5)); }
+    50% { filter: drop-shadow(0 0 25px rgba(255, 105, 180, 0.8)); }
+}
+
+/* Paragraf Selamat Belajar ReactJs */
+p:first-of-type {
+    text-align: center;
+    font-size: 1.4em;
+    color: #ff69b4;
+    background: rgba(255, 240, 245, 0.6);
+    backdrop-filter: blur(5px);
+    padding: 15px 30px;
+    border-radius: 50px;
+    display: inline-block;
+    margin: 10px auto 30px;
+    width: auto;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    font-weight: 600;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Greeting Binjai */
+small {
+    display: block;
+    text-align: center;
+    font-size: 1.3em;
+    color: #b76e79;
+    font-style: italic;
+    margin: 25px 0;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(255, 228, 225, 0.7), rgba(255, 182, 193, 0.5));
+    border-radius: 100px;
+    backdrop-filter: blur(5px);
+    border: 2px dashed #ffb6c1;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+small::before {
+    content: "🎮";
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+small::after {
+    content: "🎮";
+    margin-left: 10px;
+    font-size: 1.5em;
+}
+
+/* Container Quote */
+div:has(> hr + p) {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
+    padding: 30px;
+    margin: 30px 0;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+div:has(> hr + p)::before {
+    content: "🎯";
+    font-size: 100px;
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    opacity: 0.1;
+    transform: rotate(15deg);
+}
+
+div:has(> hr + p)::after {
+    content: "💬";
+    font-size: 80px;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    opacity: 0.1;
+    transform: rotate(-15deg);
+}
+
+/* Garis pemisah */
+hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #ffb6c1, #ff69b4, #ffb6c1, transparent);
+    margin: 30px 0;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+}
+
+/* Quote Text */
+div:has(> hr + p) p {
+    text-align: center;
+    font-size: 1.3em;
+    margin: 15px 0;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 30px;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+div:has(> hr + p) p:first-of-type {
+    color: #ff1493;
+    font-style: italic;
+    transform: rotate(-1deg);
+}
+
+div:has(> hr + p) p:last-of-type {
+    color: #ff4500;
+    font-weight: 800;
+    text-transform: uppercase;
+    transform: rotate(1deg);
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid #ffb6c1;
+}
+
+div:has(> hr + p) p:hover {
+    transform: scale(1.02) rotate(0deg);
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+    background: white;
+}
+
+/* Container untuk User Cards */
+div:has(> .UserCard) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+    position: relative;
+}
+
+/* User Card */
+div:has(> h3) {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 25px 20px;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+div:has(> h3)::before {
+    content: "🎮";
+    font-size: 150px;
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    opacity: 0.1;
+    transform: rotate(10deg);
+    transition: all 0.3s ease;
+}
+
+div:has(> h3):hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 30px 50px rgba(255, 105, 180, 0.4);
+    border-color: #ffb6c1;
+}
+
+div:has(> h3):hover::before {
+    opacity: 0.2;
+    transform: rotate(20deg) scale(1.2);
+}
+
+/* Nama di User Card */
+h3 {
+    font-size: 2em;
+    color: #ff1493;
+    margin: 0 0 15px;
+    font-weight: 700;
+    text-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 3px dotted #ffb6c1;
+    padding-bottom: 10px;
+}
+
+h3::before {
+    content: "👤";
+    font-size: 1.2em;
+    filter: drop-shadow(0 5px 5px rgba(255, 105, 180, 0.3));
+}
+
+/* Paragraf dalam User Card */
+div:has(> h3) p {
+    margin: 12px 0;
+    padding: 12px 18px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    font-size: 1.1em;
+    color: #5a4a5a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+div:has(> h3) p:hover {
+    background: white;
+    transform: translateX(5px);
+    border-color: #ffb6c1;
+}
+
+div:has(> h3) p:nth-of-type(1)::before {
+    content: "🆔";
+    font-size: 1.2em;
+}
+
+div:has(> h3) p:nth-of-type(2)::before {
+    content: "📅";
+    font-size: 1.2em;
+}
+
+div:has(> h3) p:nth-of-type(3)::before {
+    content: "🎂";
+    font-size: 1.2em;
+}
+
+/* Animasi tambahan */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.card {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Free Fire theme specific */
+div:has(> h1:first-child)::before {
+    content: "FREE FIRE";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8em;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: -1;
+    letter-spacing: 10px;
+    animation: fadeText 3s ease-in-out infinite;
+}
+
+@keyframes fadeText {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.2; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5em; }
+    h1::before, h1::after { font-size: 40px; }
+    body::before, body::after { font-size: 60px; }
+}
